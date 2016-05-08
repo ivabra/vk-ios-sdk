@@ -89,6 +89,8 @@ typedef NS_OPTIONS(NSUInteger, VKAuthorizationOptions) {
 
 - (void)vkSdkDidReceiveGroupTokens:(NSArray<VKAccessToken*> *) groupTokens;
 
+- (void)vkSdkDidFailedWithGroupAuthorization;
+
 @end
 
 

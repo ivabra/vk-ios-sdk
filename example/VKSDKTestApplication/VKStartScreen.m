@@ -104,4 +104,9 @@ static NSArray *GROUP_IDS = nil;
 - (void)vkSdkDidReceiveGroupTokens:(NSArray<VKAccessToken *> *)groupTokens {
   NSLog(@"%@", groupTokens.description);
 }
+
+-(void) vkSdkDidFailedWithGroupAuthorization {
+  NSLog(@"Failed");
+}
+
 @end

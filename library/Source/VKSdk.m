@@ -56,6 +56,7 @@
 
 @property(nonatomic, assign) VKAuthorizationState authState;
 @property(nonatomic, assign) VKAuthorizationOptions lastKnownOptions;
+@property(nonatomic, assign) bool waitsForGroupToken;
 
 @property(nonatomic, readwrite, copy) NSString *currentAppId;
 @property(nonatomic, readwrite, copy) NSString *apiVersion;
@@ -211,7 +212,8 @@ static NSString *VK_ACCESS_TOKEN_DEFAULTS_KEY = @"VK_ACCESS_TOKEN_DEFAULTS_KEY_D
   
     NSString *clientId = instance.currentAppId;
     VKAuthorizationContext *authContext =
-  [VKAuthorizationContext contextWithAuthType:type clientId:clientId displayType:VK_DISPLAY_MOBILE scope:permissions groupIds:groupIds revoke:true];
+    [VKAuthorizationContext contextWithAuthType:type clientId:clientId displayType:VK_DISPLAY_MOBILE scope:permissions groupIds:groupIds revoke:true];
+    instance.waitsForGroupToken = true;
     NSURL *urlToOpen = [VKAuthorizeController buildAuthorizationURLWithContext:authContext];
 
     if (canAuthorizeViaApp && appAllowed) {
@@ -267,15 +269,19 @@ static NSString *VK_ACCESS_TOKEN_DEFAULTS_KEY = @"VK_ACCESS_TOKEN_DEFAULTS_KEY_D
     }
   };
   
-  NSArray<VKAccessToken *> * groupTokens = [self tryGetGroupTokenFromPassedURL:passedUrl];
-  
-  
-  
-  if (groupTokens) {
-    hideViews();
-    [instance notifyDelegate:@selector(vkSdkDidReceiveGroupTokens:) obj:groupTokens];
-    return  true;
+  if (instance.waitsForGroupToken) {
+    instance.waitsForGroupToken = false;
+    NSArray<VKAccessToken *>* groupTokens = [self tryGetGroupTokenFromPassedURL:passedUrl];
+    if (groupTokens) {
+      hideViews();
+      [instance notifyDelegate:@selector(vkSdkDidReceiveGroupTokens:) obj:groupTokens];
+      return  YES;
+    } else {
+      [instance notifyDelegate:@selector(vkSdkDidFailedWithGroupAuthorization) obj:nil];
+      return NO;
+    }
   }
+  
   
     NSString *urlString = [passedUrl absoluteString];
     NSRange rangeOfHash = [urlString rangeOfString:@"#"];
