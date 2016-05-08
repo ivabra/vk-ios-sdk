@@ -6,7 +6,7 @@
 //  Copyright © 2016 VK. All rights reserved.
 //
 
-#import <VKSdkFramework/VKSdkFramework.h>
+#import "VKApiObject.h"
 
 @interface VKCurrency : VKApiObject
 @property(nonatomic, strong) NSNumber* id;
