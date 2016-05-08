@@ -267,7 +267,7 @@ static NSString *VK_ACCESS_TOKEN_DEFAULTS_KEY = @"VK_ACCESS_TOKEN_DEFAULTS_KEY_D
     }
   };
   
-  NSArray* groupTokens = [self tryGetGroupTokenFromPassedURL:passedUrl];
+  NSArray<VKAccessToken *> * groupTokens = [self tryGetGroupTokenFromPassedURL:passedUrl];
   
   
   
@@ -394,7 +394,7 @@ static NSString *VK_ACCESS_TOKEN_DEFAULTS_KEY = @"VK_ACCESS_TOKEN_DEFAULTS_KEY_D
     return result;
 }
 
-+ (NSArray *) tryGetGroupTokenFromPassedURL: (NSURL *) passedURL {
++ (NSArray<VKAccessToken *> *) tryGetGroupTokenFromPassedURL: (NSURL *) passedURL {
   NSString *urlString = [passedURL absoluteString];
   NSRange rangeOfHash = [urlString rangeOfString:@"#"];
   if (rangeOfHash.location == NSNotFound) {
@@ -405,7 +405,7 @@ static NSString *VK_ACCESS_TOKEN_DEFAULTS_KEY = @"VK_ACCESS_TOKEN_DEFAULTS_KEY_D
     return  NO;
   }
   NSDictionary *parametersDict = [VKUtil explodeQueryString:parametersString];
-  NSMutableArray *tokens = [[NSMutableArray alloc] init];
+  NSMutableArray<VKAccessToken *> *tokens = [[NSMutableArray<VKAccessToken *> alloc] init];
   for (NSString* key in parametersDict.allKeys) {
     if ([key containsString: @"access_token_"]) {
       VKAccessTokenMutable* token = [VKAccessTokenMutable tokenFromUrlString:urlString];

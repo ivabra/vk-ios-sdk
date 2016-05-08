@@ -87,7 +87,7 @@ typedef NS_OPTIONS(NSUInteger, VKAuthorizationOptions) {
  */
 - (void)vkSdkTokenHasExpired:(VKAccessToken *)expiredToken;
 
-- (void)vkSdkDidReceiveGroupTokens:(NSDictionary *) groupTokens;
+- (void)vkSdkDidReceiveGroupTokens:(NSArray<VKAccessToken*> *) groupTokens;
 
 @end
 

@@ -101,7 +101,7 @@ static NSArray *GROUP_IDS = nil;
 }
 
 
-- (void)vkSdkDidReceiveGroupTokens:(NSArray *)groupTokens {
+- (void)vkSdkDidReceiveGroupTokens:(NSArray<VKAccessToken *> *)groupTokens {
   NSLog(@"%@", groupTokens.description);
 }
 @end
