@@ -122,7 +122,10 @@ NSString *VK_AUTHORIZE_URL_STRING = @"vkauthorize://authorize";
     if (ctx.displayType) {
         params[@"display"] = ctx.displayType;
     }
-    
+    if (ctx.groupIds) {
+      params[VK_API_GROUP_IDS] = [ctx.groupIds componentsJoinedByString:@","];
+    }
+  
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", ctx.authPrefix ?: @"https://oauth.vk.com/authorize", [VKUtil queryStringFromParams:params]]];
 }
 
@@ -325,6 +328,14 @@ NSString *VK_AUTHORIZE_URL_STRING = @"vkauthorize://authorize";
 @end
 
 @implementation VKAuthorizationContext
+
++(instancetype) contextWithAuthType:(VKAuthorizationType)authType clientId:(NSString *)clientId displayType:(NSString *)displayType scope:(NSArray<NSString *> *)scope groupIds:(NSArray<NSString *> *)groupIds revoke:(BOOL)revoke {
+  VKAuthorizationContext *res = [self new];
+  
+  VKAuthorizationContext* context = [self contextWithAuthType:authType clientId:clientId displayType:displayType scope:scope revoke:revoke];
+  context.groupIds = groupIds;
+  return context;
+}
 
 +(instancetype) contextWithAuthType:(VKAuthorizationType) authType
                            clientId:(NSString*)clientId

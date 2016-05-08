@@ -24,7 +24,9 @@
 
 static NSString *const TOKEN_KEY = @"my_application_access_token";
 static NSString *const NEXT_CONTROLLER_SEGUE_ID = @"START_WORK";
+static NSString *const APP_ID = @"3974615";
 static NSArray *SCOPE = nil;
+static NSArray *GROUP_IDS = nil;
 
 @interface VKStartScreen () <UIAlertViewDelegate, VKSdkUIDelegate>
 
@@ -33,9 +35,10 @@ static NSArray *SCOPE = nil;
 @implementation VKStartScreen
 
 - (void)viewDidLoad {
-    SCOPE = @[VK_PER_FRIENDS, VK_PER_WALL, VK_PER_AUDIO, VK_PER_PHOTOS, VK_PER_NOHTTPS, VK_PER_EMAIL, VK_PER_MESSAGES];
+  SCOPE = @[VK_PER_MESSAGES, VK_PER_DOCS, VK_PER_PHOTOS]; //@[VK_PER_FRIENDS, VK_PER_WALL, VK_PER_AUDIO, VK_PER_PHOTOS, VK_PER_NOHTTPS, VK_PER_EMAIL, VK_PER_MESSAGES];
+    GROUP_IDS = @[@85146007, @112133474];
     [super viewDidLoad];
-    [[VKSdk initializeWithAppId:@"3974615"] registerDelegate:self];
+  [[VKSdk initializeWithAppId:APP_ID apiVersion: @"5.50"] registerDelegate:self]; 
     [[VKSdk instance] setUiDelegate:self];
     [VKSdk wakeUpSession:SCOPE completeBlock:^(VKAuthorizationState state, NSError *error) {
         if (state == VKAuthorizationAuthorized) {
@@ -56,7 +59,8 @@ static NSArray *SCOPE = nil;
 }
 
 - (IBAction)authorize:(id)sender {
-    [VKSdk authorize:SCOPE];
+  [VKSdk authorize:SCOPE groupIds:GROUP_IDS withOptions:VKAuthorizationOptionsDisableApp];
+  
 }
 
 - (IBAction)openShareDialog:(id)sender {
@@ -96,4 +100,8 @@ static NSArray *SCOPE = nil;
     [self.navigationController.topViewController presentViewController:controller animated:YES completion:nil];
 }
 
+
+- (void)vkSdkDidReceiveGroupTokens:(NSArray *)groupTokens {
+  NSLog(@"%@", groupTokens.description);
+}
 @end

@@ -67,6 +67,11 @@
 		8F99D63A1C42C61A0006DB03 /* VKDocs.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F99D6381C42C61A0006DB03 /* VKDocs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F99D63B1C42C61A0006DB03 /* VKDocs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99D6391C42C61A0006DB03 /* VKDocs.m */; };
 		8F99D63C1C42C61A0006DB03 /* VKDocs.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99D6391C42C61A0006DB03 /* VKDocs.m */; };
+		9FA181F71CDFBB8E00BCF98F /* VKMarketItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA181F61CDFBB8E00BCF98F /* VKMarketItem.m */; };
+		9FA181FA1CDFBBB700BCF98F /* VKPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA181F91CDFBBB700BCF98F /* VKPrice.m */; };
+		9FA181FD1CDFBBC900BCF98F /* VKCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA181FC1CDFBBC900BCF98F /* VKCurrency.m */; };
+		9FA182001CDFBD2400BCF98F /* VKMarketCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA181FF1CDFBD2400BCF98F /* VKMarketCategory.m */; };
+		9FA182031CDFBD3B00BCF98F /* VKMarketSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA182021CDFBD3B00BCF98F /* VKMarketSection.m */; };
 		F3007C5D1AEE50B5007CCA9D /* VKApiConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F3007C5C1AEE50B5007CCA9D /* VKApiConst.m */; };
 		F3050D211C49123C0092FE76 /* VKDocs.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 8F99D6381C42C61A0006DB03 /* VKDocs.h */; };
 		F3050D221C4912420092FE76 /* VKApiDocs.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 8F99D6331C42C6010006DB03 /* VKApiDocs.h */; };
@@ -466,6 +471,16 @@
 		8F99D6341C42C6010006DB03 /* VKApiDocs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKApiDocs.m; path = library/Source/API/methods/VKApiDocs.m; sourceTree = SOURCE_ROOT; };
 		8F99D6381C42C61A0006DB03 /* VKDocs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKDocs.h; sourceTree = "<group>"; };
 		8F99D6391C42C61A0006DB03 /* VKDocs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKDocs.m; sourceTree = "<group>"; };
+		9FA181F51CDFBB8E00BCF98F /* VKMarketItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMarketItem.h; sourceTree = "<group>"; };
+		9FA181F61CDFBB8E00BCF98F /* VKMarketItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMarketItem.m; sourceTree = "<group>"; };
+		9FA181F81CDFBBB700BCF98F /* VKPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKPrice.h; sourceTree = "<group>"; };
+		9FA181F91CDFBBB700BCF98F /* VKPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKPrice.m; sourceTree = "<group>"; };
+		9FA181FB1CDFBBC900BCF98F /* VKCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKCurrency.h; sourceTree = "<group>"; };
+		9FA181FC1CDFBBC900BCF98F /* VKCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKCurrency.m; sourceTree = "<group>"; };
+		9FA181FE1CDFBD2400BCF98F /* VKMarketCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMarketCategory.h; sourceTree = "<group>"; };
+		9FA181FF1CDFBD2400BCF98F /* VKMarketCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMarketCategory.m; sourceTree = "<group>"; };
+		9FA182011CDFBD3B00BCF98F /* VKMarketSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMarketSection.h; sourceTree = "<group>"; };
+		9FA182021CDFBD3B00BCF98F /* VKMarketSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMarketSection.m; sourceTree = "<group>"; };
 		F3007C5C1AEE50B5007CCA9D /* VKApiConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKApiConst.m; sourceTree = "<group>"; };
 		F3062B7F1A4185FD006B57F9 /* ic_vk_ios7_activity_logo~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_vk_ios7_activity_logo~ipad.png"; sourceTree = "<group>"; };
 		F3062B811A418A0E006B57F9 /* ic_vk_ios7_activity_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_vk_ios7_activity_logo.png; sourceTree = "<group>"; };
@@ -640,6 +655,16 @@
 				1ACA6F1509C855561AEE5F97 /* VKUniversity.m */,
 				1ACA6B721E9C5F7491625A21 /* VKApiObjectArray.h */,
 				1ACA68DAFB5BBB634DB0A73B /* VKApiObjectArray.m */,
+				9FA181F51CDFBB8E00BCF98F /* VKMarketItem.h */,
+				9FA181F61CDFBB8E00BCF98F /* VKMarketItem.m */,
+				9FA181F81CDFBBB700BCF98F /* VKPrice.h */,
+				9FA181F91CDFBBB700BCF98F /* VKPrice.m */,
+				9FA181FB1CDFBBC900BCF98F /* VKCurrency.h */,
+				9FA181FC1CDFBBC900BCF98F /* VKCurrency.m */,
+				9FA181FE1CDFBD2400BCF98F /* VKMarketCategory.h */,
+				9FA181FF1CDFBD2400BCF98F /* VKMarketCategory.m */,
+				9FA182011CDFBD3B00BCF98F /* VKMarketSection.h */,
+				9FA182021CDFBD3B00BCF98F /* VKMarketSection.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -991,6 +1016,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = VK;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = VK;
 				TargetAttributes = {
@@ -1194,11 +1220,13 @@
 				8F99D63B1C42C61A0006DB03 /* VKDocs.m in Sources */,
 				F3DA65B11B3DA34600E64A30 /* VKJSONOperation.m in Sources */,
 				183C475B18B2F1ED00F978DB /* VKBundle.m in Sources */,
+				9FA181FA1CDFBBB700BCF98F /* VKPrice.m in Sources */,
 				183C475A18B2F1ED00F978DB /* VKBatchRequest.m in Sources */,
 				183C475918B2F1ED00F978DB /* VKAccessToken.m in Sources */,
 				183C476D18B2F1ED00F978DB /* VKSdk.m in Sources */,
 				183C476218B2F1ED00F978DB /* VKPermissions.m in Sources */,
 				1ACA6D1BCF73810FA4036BFD /* VKRequest.m in Sources */,
+				9FA181FD1CDFBBC900BCF98F /* VKCurrency.m in Sources */,
 				1ACA6849C596A814969D1C73 /* VKHTTPOperation.m in Sources */,
 				1ACA69F7CAB514274AB969B2 /* NSError+VKError.m in Sources */,
 				1ACA6227186398789D76C4ED /* VKHTTPClient.m in Sources */,
@@ -1219,6 +1247,7 @@
 				8F99D6361C42C6010006DB03 /* VKApiDocs.m in Sources */,
 				1ACA6C11956AB22CAA341CB1 /* OrderedDictionary.m in Sources */,
 				1ACA656AD2A705875E2C86DC /* VKApiBase.m in Sources */,
+				9FA182031CDFBD3B00BCF98F /* VKMarketSection.m in Sources */,
 				1ACA66EB5F29CF88789B1D5F /* VKApiWall.m in Sources */,
 				1ACA68640003295CFBB9E237 /* VKApiUsers.m in Sources */,
 				1ACA65FFFA2849D789FFDB88 /* VKApiGroups.m in Sources */,
@@ -1228,6 +1257,7 @@
 				F3454FD01ABB1D1A00B15E85 /* VKRequestsScheduler.m in Sources */,
 				1ACA61EE5B7171D4F5726D08 /* VKUser.m in Sources */,
 				1ACA6AC9C143AC442155AD90 /* VKAudio.m in Sources */,
+				9FA181F71CDFBB8E00BCF98F /* VKMarketItem.m in Sources */,
 				1ACA6F1A8CF8466F058EE7BC /* VKGroup.m in Sources */,
 				1ACA618960A488A476167F98 /* VKLikes.m in Sources */,
 				1ACA614F27B7C856D2BB49DD /* VKPhoto.m in Sources */,
@@ -1245,6 +1275,7 @@
 				1ACA68336BEF00F13DEDA870 /* VKUploadMessagesPhotoRequest.m in Sources */,
 				1ACA695AB1344826A2F18CE3 /* VKUploadImage.m in Sources */,
 				1ACA69BE9C47B55CA23C6B8A /* VKImageParameters.m in Sources */,
+				9FA182001CDFBD2400BCF98F /* VKMarketCategory.m in Sources */,
 				1ACA61AF9F91E61D27B5DC81 /* VKSharedTransitioningObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1460,7 +1491,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/sdk.dst;
@@ -1468,6 +1499,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				INSTALL_PATH = /;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";
@@ -1476,6 +1508,7 @@
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = "non-global";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1483,13 +1516,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/sdk.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INSTALL_PATH = /;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";

@@ -34,6 +34,7 @@ typedef NS_ENUM(NSInteger, VKAuthorizationType) {
 @property (nonatomic, readonly, strong) NSString *clientId;
 @property (nonatomic, readonly, strong) NSString *displayType;
 @property (nonatomic, readonly, strong) NSArray<NSString*> *scope;
+@property (nonatomic,  strong) NSArray<NSString*> *groupIds;
 @property (nonatomic, readonly) BOOL revoke;
 
 /**
@@ -49,6 +50,13 @@ typedef NS_ENUM(NSInteger, VKAuthorizationType) {
                            clientId:(NSString*)clientId
                         displayType:(NSString*)displayType
                               scope:(NSArray<NSString*>*)scope
+                             revoke:(BOOL) revoke;
+
++(instancetype) contextWithAuthType:(VKAuthorizationType) authType
+                           clientId:(NSString*)clientId
+                        displayType:(NSString*)displayType
+                              scope:(NSArray<NSString*>*)scope
+                           groupIds:(NSArray<NSString*>*)groupIds
                              revoke:(BOOL) revoke;
 
 @end

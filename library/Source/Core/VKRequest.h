@@ -24,7 +24,7 @@
 #import "VKResponse.h"
 #import "VKApiConst.h"
 #import "VKObject.h"
-
+#import "VKAccessToken.h"
 
 /**
 Creates and debug timings for VKRequest
@@ -84,6 +84,7 @@ Class for execution API-requests
 /// Return YES if current request was started
 @property(nonatomic, copy) NSArray *preventThisErrorsHandling;
 
+@property(nonatomic, readwrite, strong) VKAccessToken *overridenToken;
 ///-------------------------------
 /// @name Preparing requests
 ///-------------------------------

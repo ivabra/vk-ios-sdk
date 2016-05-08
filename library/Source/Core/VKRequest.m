@@ -235,7 +235,7 @@ void vksdk_dispatch_on_main_queue_now(void(^block)(void)) {
             }
             [_preparedParameters setObject:value forKey:key];
         }
-        VKAccessToken *token = [VKSdk accessToken] ?: self.specialToken;
+      VKAccessToken *token = self.overridenToken ?: [VKSdk accessToken] ?: self.specialToken;
         if (token != nil) {
             if (token.accessToken != nil) {
                 [_preparedParameters setObject:token.accessToken forKey:VK_API_ACCESS_TOKEN];

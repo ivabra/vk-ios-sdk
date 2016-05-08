@@ -87,6 +87,8 @@ typedef NS_OPTIONS(NSUInteger, VKAuthorizationOptions) {
  */
 - (void)vkSdkTokenHasExpired:(VKAccessToken *)expiredToken;
 
+- (void)vkSdkDidReceiveGroupTokens:(NSDictionary *) groupTokens;
+
 @end
 
 
@@ -190,6 +192,14 @@ Otherwise Mobile Safari will be opened for access request.
  @param options special options
  */
 + (void)authorize:(NSArray *)permissions withOptions:(VKAuthorizationOptions)options;
+
+/**
+ Starts authorization process. If VKapp is available in system, it will opens and requests access from user.
+ Otherwise Mobile Safari will be opened for access request.
+ @param permissions array of permissions for your applications. All permissions you can
+ @param options special options
+ */
++ (void)authorize:(NSArray *)permissions groupIds: (NSArray *) groupIds withOptions:(VKAuthorizationOptions)options;
 
 ///-------------------------------
 /// @name Access token methods
