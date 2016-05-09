@@ -36,6 +36,7 @@ static NSString *const HTTPS_REQUIRED = @"https_required";
 static NSString *const CREATED = @"created";
 static NSString *const PERMISSIONS = @"permissions";
 static NSString *const LOCAL_USER = @"local_user";
+static NSString *const GROUP_ID = @"group_id";
 
 @interface VKAccessToken () {
 @protected
@@ -46,7 +47,7 @@ static NSString *const LOCAL_USER = @"local_user";
     BOOL _httpsRequired;
     NSInteger _expiresIn;
     VKUser *_localUser;
-
+    NSNumber *_groupId;
 }
 @property(nonatomic, readwrite, copy) NSString *accessToken;
 @end
@@ -90,6 +91,7 @@ static NSString *const LOCAL_USER = @"local_user";
         _expiresIn = [aDecoder decodeIntegerForKey:EXPIRES_IN];
         _created = [aDecoder decodeDoubleForKey:CREATED];
         _localUser = [aDecoder decodeObjectForKey:LOCAL_USER];
+        _groupId = [aDecoder decodeObjectForKey: GROUP_ID];
     }
     return self;
 }
@@ -117,6 +119,7 @@ static NSString *const LOCAL_USER = @"local_user";
     [aCoder encodeInteger:self.expiresIn forKey:EXPIRES_IN];
     [aCoder encodeDouble:self.created forKey:CREATED];
     [aCoder encodeObject:self.localUser forKey: LOCAL_USER];
+    [aCoder encodeObject:self.groupId forKey:GROUP_ID];
 }
 
 - (NSArray *)restorePermissions:(NSString *)permissionsString {
@@ -266,7 +269,7 @@ static NSString *const LOCAL_USER = @"local_user";
 
 
 @implementation VKAccessTokenMutable
-@dynamic accessToken, expiresIn, userId, secret, permissions, httpsRequired, localUser;
+@dynamic accessToken, expiresIn, userId, secret, permissions, httpsRequired, localUser, groupId;
 
 - (void)setAccessToken:(NSString *)accessToken {
     _accessToken = [accessToken copy];

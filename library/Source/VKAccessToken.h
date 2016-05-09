@@ -61,7 +61,7 @@ Presents VK API access token that used for loading API methods and other stuff.
 @property(nonatomic, readonly, strong) VKUser *localUser;
 
 
-@property(nonatomic, readwrite, copy) NSString *groupId;
+@property(nonatomic, readwrite, copy) NSNumber *groupId;
 
 /**
 Retrieve token from key-value query string
@@ -110,5 +110,5 @@ Save token into user defaults by specified key
 @property(nonatomic, readwrite, assign) BOOL httpsRequired;
 @property(nonatomic, readwrite, assign) NSInteger expiresIn;
 @property(nonatomic, readwrite, strong) VKUser *localUser;
-@property(nonatomic, readwrite, copy) NSString *groupId;
+@property(nonatomic, readwrite, copy) NSNumber *groupId;
 @end

@@ -418,7 +418,9 @@ static NSString *VK_ACCESS_TOKEN_DEFAULTS_KEY = @"VK_ACCESS_TOKEN_DEFAULTS_KEY_D
       NSString* groupId = [key stringByReplacingOccurrencesOfString:@"access_token_" withString:@""];
       NSString* tokenString = parametersDict[key];
       token.accessToken = tokenString;
-      token.groupId = groupId;
+      NSNumberFormatter* f = [[NSNumberFormatter alloc] init];
+      f.numberStyle = NSNumberFormatterDecimalStyle;
+      token.groupId = [f numberFromString:groupId];
       [tokens addObject:token];
     }
   }
