@@ -219,7 +219,7 @@ static NSString *VK_ACCESS_TOKEN_DEFAULTS_KEY = @"VK_ACCESS_TOKEN_DEFAULTS_KEY_D
     if (canAuthorizeViaApp && appAllowed) {
         [[UIApplication sharedApplication] openURL:urlToOpen];
         //instance.authState = VKAuthorizationExternal;
-    } else if (safariAllowed && [SFSafariViewController class] && instance.authState < VKAuthorizationSafariInApp) {
+    } else if (safariAllowed && [SFSafariViewController class]) {
         SFSafariViewController *viewController = [[SFSafariViewController alloc] initWithURL:urlToOpen];
         viewController.delegate = instance;
         [viewController vks_presentViewControllerThroughDelegate];
