@@ -59,8 +59,7 @@ static NSArray *GROUP_IDS = nil;
 }
 
 - (IBAction)authorize:(id)sender {
-  [VKSdk authorize:SCOPE groupIds:GROUP_IDS withOptions:VKAuthorizationOptionsDisableApp];
-  
+  [VKSdk authorize:SCOPE withOptions:VKAuthorizationOptionsDisableApp];
 }
 
 - (IBAction)openShareDialog:(id)sender {

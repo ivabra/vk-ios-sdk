@@ -58,6 +58,7 @@
 }
 
 static NSArray *labels = nil;
+
 static NSString *const USERS_GET = @"users.get";
 static NSString *const FRIENDS_GET = @"friends.get";
 static NSString *const FRIENDS_GET_FULL = @"friends.get with fields";
@@ -72,13 +73,14 @@ static NSString *const MAKE_SYNCHRONOUS = @"Make synchronous request";
 static NSString *const SHARE_DIALOG = @"Test share dialog";
 static NSString *const TEST_ACTIVITY = @"Test VKActivity";
 static NSString *const TEST_APPREQUEST = @"Test app request";
+static NSString *const MESSSAGES_GET_DIALOGS = @"messages.getDialgos";
 
 //Fields
 static NSString *const ALL_USER_FIELDS = @"id,first_name,last_name,sex,bdate,city,country,photo_50,photo_100,photo_200_orig,photo_200,photo_400_orig,photo_max,photo_max_orig,online,online_mobile,lists,domain,has_mobile,contacts,connections,site,education,universities,schools,can_post,can_see_all_posts,can_see_audio,can_write_private_message,status,last_seen,common_count,relation,relatives,counters";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (!labels)
-        labels = @[USERS_GET, USERS_SUBSCRIPTIONS, FRIENDS_GET, FRIENDS_GET_FULL, UPLOAD_PHOTO, UPLOAD_PHOTO_ALBUM, UPLOAD_PHOTOS, TEST_CAPTCHA, CALL_UNKNOWN_METHOD, TEST_VALIDATION, MAKE_SYNCHRONOUS, SHARE_DIALOG, TEST_ACTIVITY, TEST_APPREQUEST];
+        labels = @[MESSSAGES_GET_DIALOGS, USERS_GET, USERS_SUBSCRIPTIONS, FRIENDS_GET, FRIENDS_GET_FULL, UPLOAD_PHOTO, UPLOAD_PHOTO_ALBUM, UPLOAD_PHOTOS, TEST_CAPTCHA, CALL_UNKNOWN_METHOD, TEST_VALIDATION, MAKE_SYNCHRONOUS, SHARE_DIALOG, TEST_ACTIVITY, TEST_APPREQUEST];
     return labels.count;
 }
 
@@ -160,6 +162,9 @@ static NSString *const ALL_USER_FIELDS = @"id,first_name,last_name,sex,bdate,cit
     else if ([label isEqualToString:TEST_APPREQUEST]) {
         [self callMethod:[VKRequest requestWithMethod:@"apps.sendRequest" parameters:@{@"user_id" : @45898586, @"text" : @"Yo ho ho", @"type" : @"request", @"name" : @"I need more gold", @"key" : @"more_gold"}]];
 
+    } else if ([label isEqualToString:MESSSAGES_GET_DIALOGS]) {
+      VKRequest* request = [VKRequest requestWithMethod:@"messages.getDialogs" parameters:nil];
+      [self callMethod: request];
     }
 }
 

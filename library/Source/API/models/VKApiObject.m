@@ -198,12 +198,20 @@ static NSString *getPropertyName(objc_property_t prop) {
             if (propertyClass && ![resultObject isKindOfClass:propertyClass]) {
                 if ([(Class) propertyClass isSubclassOfClass:[NSString class]]) {
                     resultObject = [resultObject respondsToSelector:@selector(stringValue)] ? [resultObject stringValue] : nil;
+                } else if ([(Class) propertyClass isSubclassOfClass:[NSDate class]]) {
+                  NSNumber* num = [resultObject isKindOfClass:[NSNumber class]] ? resultObject : nil;
+                  if (num) {
+                    resultObject = [[NSDate alloc] initWithTimeIntervalSince1970:num.doubleValue];
+                  } else {
+                    resultObject = nil;
+                  }
                 } else {
                     resultObject = nil;
-                }
-                if (PRINT_PARSE_DEBUG_INFO) {
+                  if (PRINT_PARSE_DEBUG_INFO) {
                     [warnings addObject:[NSString stringWithFormat:@"property with name %@ expected class %@, result class %@", propertyName, propertyClass, [resultObject class]]];
+                  }
                 }
+              
             } else if (propHelper.isPrimitive) {
                 resultObject = [resultObject isKindOfClass:[NSNumber class]] ? resultObject : nil;
             }

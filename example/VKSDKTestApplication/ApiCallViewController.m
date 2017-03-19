@@ -21,7 +21,6 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "ApiCallViewController.h"
-
 @interface ApiCallViewController ()
 
 @end
@@ -33,7 +32,7 @@
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad]; 
     self.methodName.text = self.callingRequest.methodName;
     self.callingRequest.debugTiming = YES;
     self.callingRequest.requestTimeout = 10;
@@ -43,9 +42,13 @@
         welf.callResult.text = [NSString stringWithFormat:@"Result: %@", response];
         welf.callingRequest = nil;
         NSLog(@"%@", response.request.requestTiming);
+      if ([response.request.methodName isEqualToString:@"messages.getDialogs"]) {
+       
+      }
     }                                errorBlock:^(NSError *error) {
         welf.callResult.text = [NSString stringWithFormat:@"Error: %@", error];
         welf.callingRequest = nil;
+      
     }];
 }
 
